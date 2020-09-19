@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_091833) do
     t.text "advantages"
     t.text "disadvantages"
     t.string "images"
-    t.date "release_date"
+    t.string "release_date"
     t.integer "global_user_rating"
     t.integer "admin_rating"
     t.bigint "category_id"

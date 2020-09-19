@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.text :advantages
       t.text :disadvantages
       t.string :images
-      t.date :release_date
+      t.string :release_date
       t.integer :global_user_rating
       t.integer :admin_rating
       t.references :category, foreign_key: true
