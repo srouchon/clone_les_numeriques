@@ -1,15 +1,25 @@
-<div class="container">
+<div class="row d-grid">
   <div id="product-title">
     <h1><%= @product.name %></h1>
     <h3><%= @product.snippet %></h2>
   </div>
   <div id="product-img">
-    <%= image_tag @product.images %>
+    <!-- <%= image_tag @product.images %> -->
   </div>
   <div id="product-content">
     <p><%= @product.description %></p>
     <p><%= @product.design %></p>
     <p><%= @product.performance %></p>
     <p><%= @product.autonomy %></p>
+  </div>
+</div>
+<div class="row d-flex justify-content-between mt-3">
+  <div class="advantages w-50">
+    <h3>Points forts</h3>
+    <p><%= @product.advantages %></p>
+  </div>
+  <div class="disadvantages w-50">
+    <h3>Points faibles</h3>
+    <p><%= @product.disadvantages %></p>
   </div>
 </div>
