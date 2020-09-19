@@ -1,0 +1,15 @@
+<div class="container">
+  <div id="product-title">
+    <h1><%= @product.name %></h1>
+    <h3><%= @product.snippet %></h2>
+  </div>
+  <div id="product-img">
+    <%= image_tag @product.images %>
+  </div>
+  <div id="product-content">
+    <p><%= @product.description %></p>
+    <p><%= @product.design %></p>
+    <p><%= @product.performance %></p>
+    <p><%= @product.autonomy %></p>
+  </div>
+</div>
