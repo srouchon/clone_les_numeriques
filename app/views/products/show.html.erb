@@ -4,7 +4,9 @@
     <h3><%= @product.snippet %></h2>
   </div>
   <div id="product-img">
-    <!-- <%= image_tag @product.images %> -->
+    <% @product.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   </div>
   <div id="product-content">
     <p><%= @product.description %></p>
