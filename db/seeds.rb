@@ -34,8 +34,8 @@ iphone11 = Product.new(
   autonomy: "Apple a augmenté la capacité de la batterie de l'iPhone 11 Pro par rapport à celle du Xs. L'accumulateur passe de 2 658 à 3 046 mAh. La firme de Cupertino annonce un gain de 4 heures par rapport à la génération précédente. Nous avons effectivement constaté une hausse de l'endurance du dernier iPhone. Sur notre test de lecture vidéo sur Netflix, l'iPhone 11 Pro a tenu 14 h 28 min, soit un excellent score. Dans la pratique, une utilisation intensive du smartphone ne le verra pas expirer avant une bonne journée et demie. En utilisation standard, il sera tout à fait possible d'atteindre 2 jours complets. L'iPhone 11 Pro est livré avec un chargeur délivrant 18 W. Un pas de géant pour Apple, qui s'était contenté jusque-là de modestes chargeurs 5 W. Presque 4 ans après tout le monde, l'iPhone 11 Pro entre donc dans l'ère de la charge rapide — il était temps. Il faut compter 30 min pour passer de 10 à 65 % et environ 1 h de plus pour atteindre 100 %.",
   advantages: "Finitions impeccables, Excellent écran, Des photos de qualité, Performances très solides, Autonomie",
   disadvantages: "Un design qui n'évolue pas, Pas de prise mini-jack 3,5 mm ni d'adaptateur",
-  images: "https://www.lesnumeriques.com/telephone-portable/apple-iphone-11-p52757/test.html",
-  release_date: "2019"
+  release_date: "2019",
+  admin_rating: 4
 )
 iphone11.category = telephonie
 iphone11.save!

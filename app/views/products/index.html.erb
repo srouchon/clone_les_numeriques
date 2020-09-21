@@ -1,0 +1,15 @@
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="card-trip bg-white">
+    <% if product.photos.attached? %>
+    <%= cl_image_tag product.photos.first.key, crop: :fill %>
+    <% end %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= product.name %></h2>
+        <p><%= product.admin_rating %> stars</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
