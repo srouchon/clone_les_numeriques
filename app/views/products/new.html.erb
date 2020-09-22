@@ -1,17 +1,1 @@
-<div class="form">
-  <%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :admin_rating, input_html: { min: '0', max: '5' }%>
-  <%= f.input :release_date, label: "Release date (example: 'September 2020')" %>
-  <%= f.input :description %>
-  <%= f.input :snippet %>
-  <%= f.input :design %>
-  <%= f.input :autonomy %>
-  <%= f.input :performance %>
-  <%= f.input :advantages %>
-  <%= f.input :disadvantages %>
-  <%= f.association :category, collection: Category.all %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-  <% end %>
-</div>
+<%= render './shared/form', product: @product %>
