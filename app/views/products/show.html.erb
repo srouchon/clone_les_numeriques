@@ -4,9 +4,23 @@
     <h3><%= @product.snippet %></h2>
   </div>
   <div id="product-img">
-    <% @product.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @product.photos.each do |photo| %>
+        <div class="carousel-item active">
+          <%= cl_image_tag photo.key, class: 'd-block w-50' %>
+        </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
   <div id="product-content">
     <p><%= @product.description %></p>
@@ -25,3 +39,5 @@
     <p><%= @product.disadvantages %></p>
   </div>
 </div>
+
+<%= link_to '< Back', root_path, class: 'btn btn-primary' %>

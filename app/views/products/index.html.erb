@@ -1,14 +1,13 @@
-<div class="row">
+<div class="card-deck">
   <% @products.each do |product| %>
-  <div class="card-trip bg-white">
+  <div class="card">
     <% if product.photos.attached? %>
-    <%= cl_image_tag product.photos.first.key, crop: :fill %>
+    <%= cl_image_tag product.photos.first.key, class: 'card-img-top', width: 400, height: 300 %>
     <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= product.name %></h2>
-        <p><%= product.admin_rating %> stars</p>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= product.name %></h5>
+      <p class="card-text"><%= product.admin_rating %> stars</p>
+      <p class="card-text"><small class="text-muted"><%= link_to 'More details', product_path(product) %></small></p>
     </div>
   </div>
   <% end %>
