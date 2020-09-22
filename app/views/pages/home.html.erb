@@ -4,17 +4,4 @@
 
 <h1>Best product of the moment</h1>
 
-<div class="card-deck mt-4">
-  <% @products.each do |product| %>
-  <div class="card">
-    <% if product.photos.attached? %>
-      <%= cl_image_tag product.photos.first.key %>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= product.name %></h5>
-      <p class="card-text"><%= product.admin_rating %> stars</p>
-      <p class="card-text"><small class="text-muted"><%= link_to 'More details', product_path(product) %></small></p>
-    </div>
-  </div>
-  <% end %>
-</div>
+<%= render './shared/card' %>

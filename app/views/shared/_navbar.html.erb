@@ -1,43 +1,42 @@
-<div class="navbar-light navbar-lewagon">
-  <div class="navbar navbar-expand-sm">
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "My reviews", "#", class: "dropdown-item" %>
-              <%= link_to "Settings", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  
-  <div id='nav-logo' class='d-flex'>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex">
+  <div id='nav-logo' class='navbar-brand'>
     <%= link_to root_path do %>
       <%= image_tag 'logo.png', id: 'logo-img' %>
     <% end %>
   </div>
+
+  <div class="menu">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
-  <div id='nav-menu' class="row d-flex justify-content-center">
-    <div class="categories">
-      <ul>
-        <div class="category">
-          <!-- <li></li> -->
-        </div>
-      </ul>  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <%= image_tag "star.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">            
+            <% if user_signed_in? %>
+              <%= link_to "My reviews", "#", class: "dropdown-item" %>
+              <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, class: 'dropdown-item'  %>
+              <%= link_to "Login", new_user_session_path, class: 'dropdown-item'  %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
+<div id='nav-menu' class="navbar-light navbar-lewagon">
+  <ul>
+    <div id='categories' class="row d-flex">
+      <% Category.all.each do |category| %>
+        <%= link_to category_path(category) do %>
+          <li class="category"><%= category.name %></li>
+        <% end %>
+      <% end %>
+    </ul>  
   </div>
 </div>
