@@ -1,4 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-btn d-flex justify-content-center mb-4">
+  <%= link_to 'Add a new product', new_product_path, class: 'btn btn-primary' %>
+</div>
 
-<%= link_to 'Add a new product', new_product_path, class: 'btn btn-primary' %>
+<h1>Best product of the moment</h1>
+
+<div class="card-deck mt-4">
+  <% @products.each do |product| %>
+  <div class="card">
+    <% if product.photos.attached? %>
+      <%= cl_image_tag product.photos.first.key %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= product.name %></h5>
+      <p class="card-text"><%= product.admin_rating %> stars</p>
+      <p class="card-text"><small class="text-muted"><%= link_to 'More details', product_path(product) %></small></p>
+    </div>
+  </div>
+  <% end %>
+</div>

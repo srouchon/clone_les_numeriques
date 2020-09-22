@@ -2,7 +2,7 @@
   <% @products.each do |product| %>
   <div class="card">
     <% if product.photos.attached? %>
-    <%= cl_image_tag product.photos.first.key, class: 'card-img-top', width: 400, height: 300 %>
+      <%= cl_image_tag product.photos.first.key, class: 'card-img-top', width: 400, height: 300 %>
     <% end %>
     <div class="card-body">
       <h5 class="card-title"><%= product.name %></h5>
