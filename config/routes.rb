@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :products do
     resources :ratings, only: [:new, :create]
   end
-  resources :ratings, only: [:destroy]
+  resources :ratings, only: [:index, :destroy]
 end

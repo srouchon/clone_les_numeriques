@@ -8,4 +8,8 @@ class RatingPolicy < ApplicationPolicy
       end
     end
   end
+  
+  def destroy?
+    user == record.user || user.admin
+  end
 end

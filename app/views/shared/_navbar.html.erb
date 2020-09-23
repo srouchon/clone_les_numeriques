@@ -16,7 +16,7 @@
           <%= image_tag "star.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">            
             <% if user_signed_in? %>
-              <%= link_to "My reviews", "#", class: "dropdown-item" %>
+              <%= link_to "My reviews", ratings_path, class: "dropdown-item" %>
               <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item'  %>
             <% else %>

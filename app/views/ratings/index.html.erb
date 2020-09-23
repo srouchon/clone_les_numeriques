@@ -1,0 +1,11 @@
+<h1>Your reviews</h1>
+
+<ul>
+  <% @ratings.each do |rating| %>
+    <li>
+      <%= rating.rating %>
+      <%= rating.comment %>
+      <%= link_to 'Remove', rating_path(rating), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>

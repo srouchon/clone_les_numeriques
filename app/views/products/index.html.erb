@@ -1,14 +1,7 @@
-<div class="card-deck">
-  <% @products.each do |product| %>
-  <div class="card">
-    <% if product.photos.attached? %>
-      <%= cl_image_tag product.photos.first.key, class: 'card-img-top', width: 400, height: 300 %>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= product.name %></h5>
-      <p class="card-text"><%= product.admin_rating %> stars</p>
-      <p class="card-text"><small class="text-muted"><%= link_to 'More details', product_path(product) %></small></p>
-    </div>
-  </div>
-  <% end %>
+<h1>All products</h1>
+
+<div class="home-btn d-flex justify-content-center mb-4">
+  <%= link_to 'Add a product', new_product_path, class: 'btn btn-primary' %>
 </div>
+
+<%= render './shared/card' %>

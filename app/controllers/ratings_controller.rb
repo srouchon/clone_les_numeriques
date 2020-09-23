@@ -1,4 +1,8 @@
 class RatingsController < ApplicationController
+  def index
+    @ratings = policy_scope(Rating)
+  end
+  
   def new
     @product = Product.find(params[:product_id])
     @rating = Rating.new
@@ -16,13 +20,15 @@ class RatingsController < ApplicationController
   end
   
   def destroy
-    
+    @rating = Rating.find(params[:id])
+    @rating.destroy
+    redirect_to ratings_path 
+    # authorize @rating
   end
   
   private
   
   def rating_params
     params.require(:rating).permit(:comment, :rating)
-    
   end
 end
